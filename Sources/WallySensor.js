@@ -41,7 +41,6 @@ function WallySensor(log, config, platform, homebridgeAccessory) {
 			leakService.displayName = "Leak";
 		}
 		this.leakCharacteristic = leakService.getCharacteristic(Characteristic.LeakDetected);
-		this.batteryCharacteristic = leakService.getCharacteristic(Characteristic.BatteryLevel);
 		this.humidityLeakCharacteristic = leakService.getCharacteristic(Characteristic.CurrentRelativeHumidity);
 	} else {
 		//Build contact sensor
@@ -52,7 +51,6 @@ function WallySensor(log, config, platform, homebridgeAccessory) {
 			contactService.displayname = "Contact";
 		}
 		this.contactCharacteristic = contactService.getCharacteristic(Characteristic.ContactSensorState);
-		this.batteryCharacteristic = contactService.getCharacteristic(Characteristic.BatteryLevel);
 		this.humidityLeakCharacteristic = contactService.getCharacteristic(Characteristic.CurrentRelativeHumidity);
 	}
 	
@@ -66,7 +64,6 @@ function WallySensor(log, config, platform, homebridgeAccessory) {
 		}
 		this.temperatureCharacteristic = temperatureService.getCharacteristic(Characteristic.CurrentTemperature);
 		this.temperatureActiveCharacteristic = temperatureService.getCharacteristic(Characteristic.StatusActive);
-		this.batteryCharacteristic = temperatureService.getCharacteristic(Characteristic.BatteryLevel);
 		this.humidityTempCharacteristic = temperatureService.getCharacteristic(Characteristic.CurrentRelativeHumidity);
 	}
   
@@ -79,8 +76,18 @@ function WallySensor(log, config, platform, homebridgeAccessory) {
 			humidityService.displayName = "Humidity";
 		}
 		this.humidityCharacteristic = humidityService.getCharacteristic(Characteristic.CurrentRelativeHumidity);
-		this.batteryCharacteristic = humidityService.getCharacteristic(Characteristic.BatteryLevel);
+		
 	}
+	
+		
+	//build battery service
+	var batteryService = null;
+	batteryService = this.homebridgeAccessory.getService(Service.BatteryService);
+	if (!batteryService) {
+		batteryService = this.homebridgeAccessory.addService(Service.BatteryService);
+		batteryService.displayName = "Battery";
+	}
+	this.batteryCharacteristic = batteryService.getCharacteristic(Characteristic.BatteryLevel);
 
 	this.log.info("Initialized | " + this.name);
 	this.update(config);
