@@ -1,0 +1,19 @@
+
+{
+  "bridge": {
+    "name": "HomeBridge Server",
+    "username": "CC:22:3D:E3:CE:33",
+    "port": 51826,
+    "pin": "031-45-155"
+  },
+  "description": "Wally plugin example configuration file.",
+
+  "platforms": [
+    {
+      "platform": "Wally",
+      "name": "Wally",
+      "api_Token": "47f08444-1a76-4320-a84f-6fe9dadd32e1"
+
+    }
+  ]
+}

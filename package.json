@@ -1,0 +1,28 @@
+{
+  "name": "homebridge-Wally",
+  "version": "0.0.1",
+  "description": "Homebridge plugin that exposes Wally sensors as HomeKit accessories",
+  "license": "MIT",
+  "keywords": [
+    "homebridge-plugin",
+    "Wally",
+    "WallyHome",
+    "leak",
+    "sensor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/senorshaun/homebridge-Wally.git"
+  },
+  "bugs": {
+    "url": "http:://github.com/senorshaun/homebridge-Wally/issues"
+  },
+  "engines": {
+    "node": ">=4.3.2",
+    "homebridge": ">=0.4.6"
+  },
+  "dependencies": {
+    "chalk": ">=1.1.1",
+	"moment": ">=2.14.0"
+  }
+}
