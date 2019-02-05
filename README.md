@@ -15,7 +15,7 @@ Update your config.json to include the new platform.
       
       "name": "Wally",
       
-      "api_Token": "47f08444-1a76-4320-a84f-6fe9dadd32e1"
+      "api_Token": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
       
       "refresh_Time": 30 //Optional. Integer. Default 30
       
